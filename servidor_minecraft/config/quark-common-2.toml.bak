@@ -1,5 +1,4 @@
-experimental = {}
-mobs = {}
+oddities = {}
 
 [general]
 	"Enable 'q' Button" = true
@@ -189,8 +188,8 @@ mobs = {}
 
 	[building.leaf_carpet]
 		#This feature disables itself if any of the following mods are loaded:
-		# - immersive_weathering
 		# - woodworks
+		# - immersive_weathering
 		#This is done to prevent content overlap.
 		#You can turn this on to force the feature to be loaded even if the above mods are also loaded.
 		"Ignore Anti Overlap" = false
@@ -200,4 +199,4 @@ mobs = {}
 		"Enable Blue Nether Bricks" = true
 		#This also includes Red Sandstone Bricks and Soul Sandstone Bricks
 		"Enable Sandstone Bricks" = true
-		#
+		#This also incl

@@ -1,152 +1,4 @@
-
-[experimental]
-	"Adjustable Chat" = false
-	"Climate Control Remover" = false
-	#This feature generates Resource Pack Item Model predicates on the items defined in 'Items to Change'
-	#for the Enchantments defined in 'Enchantments to Register'.
-	#Example: if 'minecraft:silk_touch' is added to 'Enchantments to Register', and 'minecraft:netherite_pickaxe'
-	#is added to 'Items to Change', then a predicate named 'quark_has_enchant_minecraft_silk_touch' will be available
-	#to the netherite_pickaxe.json item model, whose value will be the enchantment level.
-	"Enchantment Predicates" = false
-	"Enchantments Begone" = false
-	"Game Nerfs" = false
-	"Narrator Readout" = false
-	"Overlay Shader" = false
-	"Spawner Replacer" = false
-	#Allows placing variant blocks automatically via a selector menu triggered from a keybind
-	"Variant Selector" = false
-	"Villager Rerolling Rework" = false
-
-	[experimental.adjustable_chat]
-		"Horizontal Shift" = 0
-		"Vertical Shift" = 0
-
-	[experimental.climate_control_remover]
-		#Disables the temperature comparison when choosing biomes to generate.
-		"Disable Temperature" = false
-		#Disables the humidity comparison when choosing biomes to generate.
-		"Disable Humidity" = false
-		#Disables the 'continentalness' comparison when choosing biomes to generate.
-		#WARNING: Enabling this will probably make oceans act a lot more like rivers.
-		"Disable Continentalness" = false
-		#Disables the 'erosion' comparison when choosing biomes to generate.
-		#WARNING: Enabling this will probably create very extreme height differences, and will make the End more chaotic.
-		"Disable Erosion" = false
-		#Disables the 'depth' comparison when choosing biomes to generate.
-		#WARNING: Enabling this will probably make cave biomes appear at unusual heights.
-		"Disable Depth" = false
-		#Disables the 'weirdness' comparison when choosing biomes to generate.
-		#WARNING: Enabling this will... well, probably make things weird.
-		"Disable Weirdness" = false
-		#Disables the 'offset' parameter when choosing biomes to generate.
-		#WARNING: Enabling this will make rarer nether biomes more common.
-		"Disable Offset" = false
-
-	#This feature generates Resource Pack Item Model predicates on the items defined in 'Items to Change'
-	#for the Enchantments defined in 'Enchantments to Register'.
-	#Example: if 'minecraft:silk_touch' is added to 'Enchantments to Register', and 'minecraft:netherite_pickaxe'
-	#is added to 'Items to Change', then a predicate named 'quark_has_enchant_minecraft_silk_touch' will be available
-	#to the netherite_pickaxe.json item model, whose value will be the enchantment level.
-	[experimental.enchantment_predicates]
-		"Items To Change" = []
-		"Enchantments To Register" = []
-
-	[experimental.enchantments_begone]
-		"Enchantments To Begone" = []
-
-	[experimental.game_nerfs]
-		#Makes Mending act like the Unmending mod
-		#https://www.curseforge.com/minecraft/mc-mods/unmending
-		"Nerf Mending" = true
-		#Makes Mending II still work even if mending is nerfed.
-		#If you want Mending II, disable the sanity check on Ancient Tomes and add minecraft:mending to the tomes.
-		"No Nerf for Mending II" = false
-		#Resets all villager discounts when zombified to prevent reducing prices to ridiculous levels
-		"Nerf Villager Discount" = true
-		#Makes Iron Golems not drop Iron Ingots
-		"Disable Iron Farms" = true
-		#Makes Boats not glide on ice
-		"Disable Ice Roads" = true
-		#Makes Sheep not drop Wool when killed
-		"Disable Wool Drops" = true
-		#Disables mob griefing for only specific entities
-		"Enable Selective Mob Griefing" = true
-		#Force Elytra to only work in specific dimensions
-		"Enable Dimension Locked Elytra" = true
-		#Makes falling blocks not able to be duped via dimension crossing
-		"Disable Falling Block Dupe" = true
-		#Fixes several piston physics exploits, most notably including TNT duping
-		"Disable Piston Physics Exploits" = true
-		#Fixes mushroom growth being able to replace blocks
-		"Disable Mushroom Block Removal" = true
-		#Makes tripwire hooks unable to be duplicated
-		"Disable Tripwire Hook Dupe" = true
-		"Non Griefing Entities" = ["minecraft:creeper", "minecraft:enderman"]
-		"Elytra Allowed Dimensions" = ["minecraft:the_end"]
-
-	[experimental.overlay_shader]
-		#Sets the name of the shader to load on a regular basis. This can load any shader the Camera module can (and requires the Camera module enabled to apply said logic).
-		#Some useful shaders include 'desaturate', 'oversaturate', 'bumpy'
-		#Colorblind simulation shaders are available in the form of 'deuteranopia', 'protanopia', 'tritanopia', and 'achromatopsia'
-		Shader = "none"
-
-	[experimental.spawner_replacer]
-		#Mobs to be replaced with other mobs.
-		#Format is: "mob1,mob2", i.e. "minecraft:spider,minecraft:skeleton"
-		"Replace Mobs" = []
-
-	#Allows placing variant blocks automatically via a selector menu triggered from a keybind
-	[experimental.variant_selector]
-		#Set this to true to automatically convert any dropped variant items into their originals. Do this ONLY if you intend to take control of every recipe via a data pack or equivalent, as this will introduce dupes otherwise.
-		"Convert Variant Items" = false
-		#Enable the hammer, allowing variants to be swapped between eachother, including the original block. Do this ONLY under the same circumstances as Convert Variant Items.
-		"Enable Hammer" = false
-		"Show Tooltip" = true
-		"Align Hud To Hotbar" = false
-		"Show Simple Hud" = false
-		"Show Hud" = true
-		"Enable Green Tint" = true
-		"Override Held Item Render" = true
-		"Hud Offset X" = 0
-		"Hud Offset Y" = 0
-
-		[experimental.variant_selector.variants]
-			#The list of all variant types available for players to use. Values are treated as suffixes to block IDs for scanning.
-			#Prefix any variant type with ! to make it show up for Manual Variants but not be automatically scanned for. (e.g. '!polish')
-			"Variant Types" = ["slab", "stairs", "wall", "fence", "fence_gate", "vertical_slab"]
-			#By default, only a mod's namespace is scanned for variants for its items (e.g. if coolmod adds coolmod:fun_block, it'll search only for coolmod:fun_block_stairs).
-			# Mods in this list are also scanned for variants if none are found in itself (e.g. if quark is in the list and coolmod:fun_block_stairs doesn't exist, it'll try to look for quark:fun_block_stairs next)
-			"Tested Mods" = ["quark"]
-			"Print Variant Map To Log" = false
-			#Format is 'alias=original' in each value (e.g. 'wall=fence' means that a failed search for, minecraft:cobblestone_fence will try cobblestone_wall next)
-			Aliases = ["carpet=slab", "pane=fence"]
-			#Ends of block IDs to try and remove when looking for variants. (e.g. minecraft:oak_planks goes into minecraft:oak_stairs, so we have to include '_planks' in this list for it to find them or else it'll only look for minecraft:oak_planks_stairs)
-			"Strip Candidates" = ["_planks", "_wool", "_block", "s"]
-			#Add manual variant overrides here, the format is 'type,block,output' (e.g. polish,minecraft:stone_bricks,minecraft:chiseled_stone_bricks). The type must be listed in Variant Types
-			"Manual Variants" = []
-			# A list of block IDs and mappings to be excluded from variant selection.
-			#To exclude a block from being turned into other blocks, just include the block ID (e.g. minecraft:cobblestone).
-			#To exclude a block from having other blocks turned into it, suffix it with = (e.g. =minecraft:cobblestone_stairs)
-			#To exclude a specific block->variant combination, put = between the two (e.g. minecraft:cobblestone=minecraft:cobblestone_stairs)
-			Blacklist = ["minecraft:snow", "minecraft:bamboo", "minecraft:bamboo_block"]
-
-	[experimental.villager_rerolling_rework]
-		#If enabled, the first two trades a villager generates for a profession will always be the same for a given villager.
-		#This prevents repeatedly placing down a job site block to reroll the villager's trades.
-		"Seed Initial Villager Trades" = true
-		#Set to 0 to disable the chance to reroll trades when restocking.
-		#It's possible for a trade to not restock even when the chance is 1. This happens when the rerolled trade is one the villager already has.
-		#This chance only guarantees a reroll will be attempted.
-		#Allowed values: [0,1]
-		"Chance To Reroll When Restocking" = 0.25
-		#Set to 0 to disable the chance to reroll trades when restocking. Set to -1 to allow unlimited rerolling.
-		#Trades earlier in the list will restock first.
-		"Maximum Restocks Per Day" = 3
-		#If enabled, villagers will reroll when they restock, rather than when they begin work for the day.
-		#If disabled, players can prevent rerolling by ensuring the villager isn't out of stock on their last restock of the day.
-		"Reroll On Any Restock" = false
-		#If enabled, villagers will be able to reroll any trade that has been used AT ALL since the last restock.
-		"Reroll Even If Not Out Of Stock" = false
+experimental = {}
 
 [general]
 	"Enable 'q' Button" = true
@@ -336,8 +188,8 @@
 
 	[building.leaf_carpet]
 		#This feature disables itself if any of the following mods are loaded:
-		# - immersive_weathering
 		# - woodworks
+		# - immersive_weathering
 		#This is done to prevent content overlap.
 		#You can turn this on to force the feature to be loaded even if the above mods are also loaded.
 		"Ignore Anti Overlap" = false
@@ -371,8 +223,8 @@
 		#Allowed values: [0,1]
 		"Fall Damage Multiplier" = 0.5
 		#This feature disables itself if any of the following mods are loaded:
-		# - environmental
 		# - goated
+		# - environmental
 		#This is done to prevent content overlap.
 		#You can turn this on to force the feature to be loaded even if the above mods are also loaded.
 		"Ignore Anti Overlap" = false
@@ -538,4 +390,425 @@
 		"Item Quality" = 0
 
 	[tools.endermosh_music_disc]
-		"Pla
+		"Play Endermosh During Enderdragon Fight" = false
+		"Add To End City Loot" = true
+		"Loot Weight" = 5
+		"Loot Quality" = 1
+
+	[tools.parrot_eggs]
+		#The chance feeding a parrot will produce an egg
+		Chance = 0.05
+		#How long it takes to create an egg
+		"Egg Time" = 12000
+		"Enable Special Awesome Parrot" = true
+
+	[tools.pathfinder_maps]
+		#In this section you can add custom Pathfinder Maps. This works for both vanilla and modded biomes.
+		#Each custom map must be on its own line.
+		#The format for a custom map is as follows:
+		#<id>,<level>,<min_price>,<max_price>,<color>,<name>
+		#With the following descriptions:
+		# - <id> being the biome's ID NAME. You can find vanilla names here - https://minecraft.wiki/w/Biome#Biome_IDs
+		# - <level> being the Cartographer villager level required for the map to be unlockable
+		# - <min_price> being the cheapest (in Emeralds) the map can be
+		# - <max_price> being the most expensive (in Emeralds) the map can be
+		# - <color> being a hex color (without the #) for the map to display. You can generate one here - https://htmlcolorcodes.com/
+		#Here's an example of a map to locate Ice Mountains:
+		#minecraft:ice_mountains,2,8,14,7FE4FF
+		Customs = []
+		#Set to false to make it so the default quark Pathfinder Map Built-In don't get added, and only the custom ones do
+		"Apply Default Trades" = true
+		#How many steps in the search should the Pathfinder's Quill do per tick? The higher this value, the faster it'll find a result, but the higher chance it'll lag the game while doing so
+		"Pathfinders Quill Speed" = 32
+		#Experimental. Determines if quills should be multithreaded instead. Will ignore quill speed. This could drastically improve performance as it execute the logic off the main thread ideally causing no lag at all
+		"Multi Threaded" = true
+		#Allows retrying after a pathfinder quill fails to find a biome nearby. Turn off if you think its op
+		"Allow Retrying" = true
+		"Search Radius" = 6400
+		"Xp From Trade" = 5
+		"Add To Cartographer" = true
+		"Add To Wandering Trader Forced" = true
+		"Add To Wandering Trader Generic" = false
+		"Add To Wandering Trader Rare" = false
+		"Draw Hud" = true
+		"Hud On Top" = false
+
+	[tools.pickarang]
+		"Enable Flamerang" = true
+		#Set this to true to use the recipe without the Heart of Diamond, even if the Heart of Diamond is enabled.
+		"Never Use Heart Of Diamond" = false
+
+		[tools.pickarang.pickarang]
+			#How long it takes before the Pickarang starts returning to the player if it doesn't hit anything.
+			Timeout = 20
+			#Pickarang harvest level. 2 is Iron, 3 is Diamond, 4 is Netherite.
+			"Harvest Level" = 3
+			#Pickarang durability. Set to -1 to have the Pickarang be unbreakable.
+			Durability = 800
+			#Pickarang max hardness breakable. 22.5 is ender chests, 25.0 is monster boxes, 50 is obsidian. Most things are below 5.
+			"Max Hardness" = 20.0
+			#How much damage the Pickarang deals when swung as an item
+			"Attack Damage" = 2
+			#How many ticks do you have to wait between using the pickarang again
+			Cooldown = 10
+			#Whether this pickarang type can act as a hoe.
+			"Can Act As Hoe" = false
+			#Whether this pickarang type can act as a shovel.
+			"Can Act As Shovel" = true
+			#Whether this pickarang type can act as an axe.
+			"Can Act As Axe" = true
+
+		[tools.pickarang.flamerang]
+			#How long it takes before the Pickarang starts returning to the player if it doesn't hit anything.
+			Timeout = 20
+			#Pickarang harvest level. 2 is Iron, 3 is Diamond, 4 is Netherite.
+			"Harvest Level" = 4
+			#Pickarang durability. Set to -1 to have the Pickarang be unbreakable.
+			Durability = 1040
+			#Pickarang max hardness breakable. 22.5 is ender chests, 25.0 is monster boxes, 50 is obsidian. Most things are below 5.
+			"Max Hardness" = 20.0
+			#How much damage the Pickarang deals when swung as an item
+			"Attack Damage" = 3
+			#How many ticks do you have to wait between using the pickarang again
+			Cooldown = 10
+			#Whether this pickarang type can act as a hoe.
+			"Can Act As Hoe" = false
+			#Whether this pickarang type can act as a shovel.
+			"Can Act As Shovel" = true
+			#Whether this pickarang type can act as an axe.
+			"Can Act As Axe" = true
+
+	[tools.seed_pouch]
+		"Max Items" = 640
+		"Show All Variants In Creative" = true
+		"Shift Range" = 3
+		#Allow putting bone meal into the Seed Pouch (or anything else in the tag 'quark:seed_pouch_fertilizers')
+		"Allow Fertilizer" = true
+		"Fertilizer Shift Range" = 3
+
+	[tools.skull_pikes]
+		"Pike Range" = 5.0
+
+	[tools.torch_arrow]
+		"Extinguish On Miss" = false
+
+	[tools.trowel]
+		#Amount of blocks placed is this value + 1.
+		#Set to 0 to make the Trowel unbreakable
+		#Allowed values: [0,)
+		"Trowel Max Durability" = 0
+
+[tweaks]
+	"Armed Armor Stands" = true
+	"Automatic Recipe Unlock" = true
+	"Better Elytra Rocket" = true
+	"Campfires Boost Elytra" = true
+	"Compasses Work Everywhere" = true
+	"Coral On Cactus" = true
+	"Diamond Repair" = true
+	"Double Door Opening" = true
+	"Dragon Scales" = true
+	"Dyeable Item Frames" = true
+	Emotes = true
+	"Enhanced Ladders" = true
+	"Glass Shard" = true
+	"Gold Tools Have Fortune" = true
+	"Grab Chickens" = true
+	"Hoe Harvesting" = true
+	"Horses Swim" = true
+	"Improved Sponges" = true
+	"Lock Rotation" = true
+	"Map Washing" = true
+	"More Banner Layers" = true
+	"More Note Block Sounds" = true
+	"No Durability On Cosmetics" = true
+	"Pat The Dogs" = true
+	"Pig Litters" = true
+	"Poison Potato Usage" = true
+	"Reacharound Placing" = true
+	"Renewable Spore Blossoms" = true
+	"Replace Scaffolding" = true
+	"Safer Creatures" = true
+	"Shulker Packing" = true
+	"Simple Harvest" = true
+	"Slabs To Blocks" = true
+	"Slimes To Magma Cubes" = true
+	"Snow Golem Player Heads" = true
+	"Utility Recipes" = true
+	"Vexes Die With Their Masters" = true
+	"Villagers Follow Emeralds" = true
+	"Zombie Villagers On Normal" = true
+
+	[tweaks.automatic_recipe_unlock]
+		#A list of recipe names that should NOT be added in by default
+		"Ignored Recipes" = []
+		"Force Limited Crafting" = false
+		"Disable Recipe Book" = false
+		#If enabled, advancements granting recipes will be stopped from loading, potentially reducing the lagspike on first world join.
+		"Filter Recipe Advancements" = true
+
+	[tweaks.campfires_boost_elytra]
+		"Boost Strength" = 0.5
+		"Max Speed" = 1.0
+
+	[tweaks.compasses_work_everywhere]
+		"Enable Compass Nerf" = true
+		"Enable Clock Nerf" = true
+		"Enable Nether" = true
+		"Enable End" = true
+
+	[tweaks.diamond_repair]
+		#List of changes to apply to repair items, format is "<item>=<repair_item>" as seen in the defualt.
+		#Multiple repair items can be applied for the same base item, and as long as at least one is provided, any vanilla option will be removed.
+		#To use multiple items, comma separate them (e.g. "minecraft:diamond_sword=minecraft:diamond,minecraft:emerald")If you want the vanilla option back, you must add it again manually.
+		"Repair Item Changes" = ["minecraft:netherite_sword=minecraft:diamond", "minecraft:netherite_pickaxe=minecraft:diamond", "minecraft:netherite_axe=minecraft:diamond", "minecraft:netherite_shovel=minecraft:diamond", "minecraft:netherite_hoe=minecraft:diamond", "minecraft:netherite_helmet=minecraft:diamond", "minecraft:netherite_chestplate=minecraft:diamond", "minecraft:netherite_leggings=minecraft:diamond", "minecraft:netherite_boots=minecraft:diamond"]
+		"Unrepairable Items" = []
+		"Enable Jei Hints" = true
+
+	[tweaks.double_door_opening]
+		"Enable Doors" = true
+		"Enable Fence Gates" = true
+		#This feature disables itself if any of the following mods are loaded:
+		# - utilitix
+		#This is done to prevent content overlap.
+		#You can turn this on to force the feature to be loaded even if the above mods are also loaded.
+		"Ignore Anti Overlap" = false
+
+	[tweaks.emotes]
+		#The enabled default emotes. Remove from this list to disable them. You can also re-order them, if you feel like it.
+		"Enabled Emotes" = ["no", "yes", "wave", "salute", "cheer", "clap", "think", "point", "shrug", "headbang", "weep", "facepalm"]
+		#The list of Custom Emotes to be loaded.
+		#Watch the tutorial on Custom Emotes to learn how to make your own: https://youtu.be/ourHUkan6aQ
+		"Custom Emotes" = []
+		#Enable this to make custom emotes read the file every time they're triggered so you can edit on the fly.
+		#DO NOT ship enabled this in a modpack, please.
+		"Custom Emote Debug" = false
+		"Button Shift X" = 0
+		"Button Shift Y" = 0
+
+	[tweaks.enhanced_ladders]
+		#Allowed values: (,0]
+		"Fall Speed" = -0.2
+		"Allow Freestanding" = true
+		"Allow Dropping Down" = true
+		"Allow Sliding" = true
+		"Allow Inventory Sneak" = true
+
+	[tweaks.gold_tools_have_fortune]
+		#Allowed values: [0,)
+		"Fortune Level" = 2
+		#Allowed values: [0,4]
+		"Harvest Level" = 2
+		"Display Baked Enchantments In Tooltip" = true
+		"Italic Tooltip" = true
+		#Enchantments other than Gold's Fortune/Looting to bake into items. Format is "item+enchant@level", such as "minecraft:stick+sharpness@10".
+		"Baked Enchantments" = []
+
+	[tweaks.grab_chickens]
+		"Needs No Helmet" = true
+		#Set to 0 to disable
+		"Slowness Level" = 1
+
+	[tweaks.hoe_harvesting]
+		#Allowed values: [1,5]
+		"Regular Hoe Radius" = 2
+		#Allowed values: [1,5]
+		"High Tier Hoe Radius" = 3
+
+	[tweaks.improved_sponges]
+		#The maximum number of water tiles that a sponge can soak up. Vanilla default is 64.
+		#Allowed values: [64,)
+		"Maximum Water Drain" = 256
+		#The maximum number of water tiles that a sponge can 'crawl along' for draining. Vanilla default is 6.
+		#Allowed values: [6,)
+		"Maximum Crawl Distance" = 10
+		"Enable Placing On Water" = true
+
+	[tweaks.map_washing]
+		#This feature disables itself if any of the following mods are loaded:
+		# - supplementaries
+		#This is done to prevent content overlap.
+		#You can turn this on to force the feature to be loaded even if the above mods are also loaded.
+		"Ignore Anti Overlap" = false
+
+	[tweaks.more_banner_layers]
+		#Allowed values: [1,16]
+		"Layer Limit" = 16
+
+	[tweaks.more_note_block_sounds]
+		"Enable Amethyst Sound" = true
+
+	[tweaks.no_durability_on_cosmetics]
+		#Allow applying cosmetic items such as color runes with no anvil durability usage? Cosmetic items are defined in the quark:cosmetic_anvil_items tag
+		"Allow Cosmetic Items" = true
+
+	[tweaks.pat_the_dogs]
+		#How many ticks it takes for a dog to want affection after being pet/tamed; leave -1 to disable
+		"Dogs Want Love" = -1
+		#Whether you can pet all mobs
+		"Pet All Mobs" = false
+		#If `petAllMobs` is set, these mobs still can't be pet
+		"Pettable Denylist" = ["minecraft:ender_dragon", "minecraft:wither", "minecraft:armor_stand"]
+		#Even if `petAllMobs` is not set, these mobs can be pet
+		"Pettable Allowlist" = []
+
+	[tweaks.pig_litters]
+		#Allowed values: [1,)
+		"Min Pig Litter Size" = 2
+		#Allowed values: [1,)
+		"Max Pig Litter Size" = 3
+		"Pigs Eat Golden Carrots" = true
+		#Allowed values: [0,)
+		"Min Golden Carrot Boost" = 0
+		#Allowed values: [0,)
+		"Max Golden Carrot Boost" = 2
+
+	[tweaks.poison_potato_usage]
+		Chance = 0.1
+		"Poison Effect" = true
+
+	[tweaks.reacharound_placing]
+		#Allowed values: [0,1]
+		Leniency = 0.5
+		Whitelist = []
+		Blacklist = []
+
+	[tweaks.renewable_spore_blossoms]
+		"Bone Meal Chance" = 0.2
+
+	[tweaks.replace_scaffolding]
+		#How many times the algorithm for finding out where a block would be placed is allowed to turn. If you set this to large values (> 3) it may start producing weird effects.
+		"Max Bounces" = 1
+
+	[tweaks.safer_creatures]
+		#How many blocks should be subtracted from the rabbit fall height when calculating fall damage. 5 is the same value as vanilla frogs
+		"Height Reduction" = 5.0
+		"Enable Slime Fall Damage Removal" = true
+
+	[tweaks.simple_harvest]
+		#Can players harvest crops with empty hand clicks?
+		"Empty Hand Harvest" = true
+		#Does harvesting crops with a hoe cost durability?
+		"Harvesting Costs Durability" = false
+		#Should Quark look for(nonvanilla) crops, and handle them?
+		"Do Harvesting Search" = true
+		#Should villagers use simple harvest instead of breaking crops?
+		"Villagers Use Simple Harvest" = true
+		#Which crops can be harvested?
+		#Format is: "harvestState[,afterHarvest]", i.e. "minecraft:wheat[age=7]" or "minecraft:cocoa[age=2,facing=north],minecraft:cocoa[age=0,facing=north]"
+		"Harvestable Blocks" = ["minecraft:wheat[age=7]", "minecraft:carrots[age=7]", "minecraft:potatoes[age=7]", "minecraft:beetroots[age=3]", "minecraft:nether_wart[age=3]", "minecraft:cocoa[age=2,facing=north],minecraft:cocoa[age=0,facing=north]", "minecraft:cocoa[age=2,facing=south],minecraft:cocoa[age=0,facing=south]", "minecraft:cocoa[age=2,facing=east],minecraft:cocoa[age=0,facing=east]", "minecraft:cocoa[age=2,facing=west],minecraft:cocoa[age=0,facing=west]"]
+		#Which blocks should right click harvesting simulate a click on instead of breaking?
+		#This is for blocks like sweet berry bushes, which have right click harvesting built in.
+		"Right Clickable Blocks" = ["minecraft:sweet_berry_bush", "minecraft:cave_vines"]
+
+	[tweaks.utility_recipes]
+		#Can any wool color be dyed?
+		"Dye Any Wool" = true
+		#Can other stone-like materials be used for crafting stone tools?
+		"Better Stone Tool Crafting" = true
+		#Can a dispenser be crafted by adding a bow to a dropper?
+		"Enable Dispenser" = true
+		#Can a repeater be crafted with the pattern for a redstone torch?
+		"Enable Repeater" = true
+		#Can you craft a minecart around blocks which can be placed inside?
+		"Enable Minecarts" = true
+		#Can you craft a boat around a chest to directly make a chest boat?
+		"Enable Chest Boats" = true
+		#Can you craft four chests at once using logs?
+		"Logs To Chests" = true
+		#Can Coral be crafted into dye?
+		"Coral To Dye" = true
+		#Can cookies, paper, and bread be crafted in a 2x2 crafting table?
+		"Bent Recipes" = true
+		#Can Rotten Flesh and Poisonous Potatoes be composted?
+		"Compostable Toxins" = true
+		#Does Dragon Breath return a bottle when used as a reagent or material?
+		"Effective Dragon Breath" = true
+		#Can torches can be used as fuel in furnaces?
+		"Torches Burn" = true
+		#Can bones be smelted down to bone meal?
+		"Bone Meal Utility" = true
+		#Can Charcoal be crafted into Black Dye?
+		"Charcoal To Black Dye" = true
+		#Can two Logs be used instead of a Chest to make a Hopper?
+		"Easy Hopper" = true
+		#Can two Logs be used to craft 16 sticks?
+		"Easy Sticks" = true
+		#Can raw ore blocks be smelted, taking 9x the time a normal item?
+		"Smelt Raw Ore Blocks" = true
+
+[world]
+	"Ancient Wood" = true
+	"Azalea Wood" = true
+	"Big Stone Clusters" = true
+	"Blossom Trees" = true
+	"Chorus Vegetation" = true
+	Corundum = true
+	"Fairy Rings" = true
+	"Glimmering Weald" = true
+	"Monster Box" = true
+	"Nether Obsidian Spikes" = true
+	"New Stone Types" = true
+	"No More Lava Pockets" = true
+	Permafrost = true
+	"Spiral Spires" = true
+
+	[world.ancient_wood]
+		"Ancient Fruit Gives Exp" = true
+		#Allowed values: [1,)
+		"Ancient Fruit Exp Value" = 10
+		#Set to a value other than 0 to enable Ancient City loot chest generation (8 recommended if you do)
+		#Allowed values: [0,)
+		"Ancient City Loot Weight" = 0
+		#Allowed values: [0,)
+		"Ancient City Loot Quality" = 1
+		#Set to 0 to disable sniffer sniffing. The vanilla loot table has every entry at weight 1, so without editing it, it's impossible to make the sapling more rare
+		#Allowed values: [0,)
+		"Sniffing Loot Weight" = 1
+		#Allowed values: [0,)
+		"Sniffing Loot Quality" = 0
+
+	[world.azalea_wood]
+		#This feature disables itself if any of the following mods are loaded:
+		# - caverns_and_chasms
+		#This is done to prevent content overlap.
+		#You can turn this on to force the feature to be loaded even if the above mods are also loaded.
+		"Ignore Anti Overlap" = false
+
+	[world.big_stone_clusters]
+		#Blocks that stone clusters can replace. If you want to make it so it only replaces in one dimension,
+		#do "block|dimension", as we do for netherrack and end stone by default.
+		"Blocks To Replace" = ["minecraft:stone", "minecraft:andesite", "minecraft:diorite", "minecraft:granite", "minecraft:netherrack|minecraft:the_nether", "minecraft:end_stone|minecraft:the_end", "quark:marble", "quark:limestone", "quark:jasper", "quark:slate"]
+
+		[world.big_stone_clusters.calcite]
+			Enabled = true
+			#Allowed values: [0,)
+			Rarity = 4
+			"Min Y Level" = 20
+			"Max Y Level" = 80
+			#Allowed values: [0,)
+			"Horizontal Size" = 14
+			#Allowed values: [0,)
+			"Vertical Size" = 14
+			#Allowed values: [0,)
+			"Horizontal Variation" = 9
+			#Allowed values: [0,)
+			"Vertical Variation" = 9
+
+			[world.big_stone_clusters.calcite.dimensions]
+				"Is Blacklist" = false
+				Dimensions = ["minecraft:overworld"]
+
+			[world.big_stone_clusters.calcite.biomes]
+
+				#Biome tags for which this should spawn in. Must match both this and 'biomes' to spawn.
+				[world.big_stone_clusters.calcite.biomes.tags]
+					"Biome Tags" = ["minecraft:is_mountain"]
+					"Is Blacklist" = false
+
+				#Biome names this should spawn in. Must match both this and 'types' to spawn.
+				[world.big_stone_clusters.calcite.biomes.biomes]
+					Biomes = []
+					"Is Blacklist" = true
+
+		[
