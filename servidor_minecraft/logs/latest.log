@@ -101,3 +101,13 @@
 [18May2025 18:48:20.175] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Unknown or incomplete command, see below for error
 [18May2025 18:48:20.175] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: home/codespace/.python/current/bin/python "/workspaces/super-duper-umbrella/msx (1).py"<--[HERE]
 [18May2025 18:48:27.898] [Server thread/INFO] [net.minecraft.server.network.ServerLoginPacketListenerImpl/]: com.mojang.authlib.GameProfile@70b44507[id=<null>,name=BenjaMC1,properties={},legacy=false] (/127.27.192.42:48933) lost connection: Disconnected
+[18May2025 19:13:55.136] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[18May2025 19:13:55.137] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[18May2025 19:13:55.137] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[18May2025 19:13:55.901] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[18May2025 19:13:58.510] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[18May2025 19:13:58.511] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[18May2025 19:13:58.523] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[18May2025 19:13:58.523] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[18May2025 19:13:58.523] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[18May2025 19:13:58.523] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
